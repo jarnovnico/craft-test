@@ -1,0 +1,32 @@
+/* --- Base Templates --- */
+
+.container {
+  padding-top: 8%;
+  background-color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid lightgray;
+}
+.template-wrapper {
+  padding: 0 30px 30px;
+  position: relative;
+}
+.template-header-img__wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+  position: relative;
+  background-color: lightgrey;
+}
+.template-header-img {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+img.template-header-img {
+  max-height: 100%;
+  max-width: 100%;
+}

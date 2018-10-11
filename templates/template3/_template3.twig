@@ -1,0 +1,31 @@
+
+{% extends '_base.twig' %}
+
+{% block content %}
+    <div class="template3 template-wrapper">
+        <a href=""></a>
+        <section>
+            <div class="template-header-img__wrapper">
+                {% if entry.image is defined and entry.image is not empty %}
+                    <img class="template-header-img" src="{{ entry.image.one().getUrl() }}" alt="">
+                {% endif %}
+            </div>
+        </section>
+
+        <section class="template3__top-detail-text-wrapper">
+            <span class="template3__post-date">{{ entry.postDate | date("M d, Y") }}</span>
+            <h1 class="template3__title">{{ entry.title }}</h1>
+
+            {% if entry.categories is defined and entry.categories is not empty %}
+                {% set category = craft.categories.group('Categories').all() %}
+                <h2 class="template3__subtitle">{{ entry.categories.one().title }}</h2>
+            {% endif %}
+
+        </section>
+        {% block blocks %}
+            {% include 'blocks/_blocks.twig' with {
+                field: 'blocks',
+            } %}
+        {% endblock %}
+    </div>
+{% endblock %}

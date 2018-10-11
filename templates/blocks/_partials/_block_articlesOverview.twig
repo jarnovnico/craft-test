@@ -1,0 +1,90 @@
+<div class="block__articles-overview">
+    <section>
+        <img src="" alt="">
+        <h3>{{ block.articleTitle }}</h3>
+        <p>{{ block.articleDescription }}</p>
+
+        <div class="filters-container">
+            {% for category in craft.categories.group('Categories').all() %}
+                <div class="filter-wrap">
+                    <label class="filter-label" for="filter-category-{{ category.slug }}">{{ category.title }}</label>
+                    <input id="filter-category-{{ category.slug }}" type="checkbox" class="filter-btn" value="{{ category.slug }}" />
+                </div>
+            {% endfor %}
+        </div>
+
+    </section>
+    <section>
+        {#Craft 3 Pagination limit it's list to 10 items#}
+        {#{% paginate block.articleList as pageEntries %}#}
+
+        {#{% set allBlocks = block.articleList %}#}
+        {#{% set batch = 3 %}#}
+        {#{% set limit = allBlocks * batch %}#}
+        {#{% set newArticleItem = allBlocks + 1 %}#}
+        {#{% set items = allBlocks.limit(batch) %}#}
+
+        {#<pre>#}
+           {#{{ dump(articleItem) }}#}
+        {#</pre>#}
+
+        {% for articleItem in block.articleList.order('title asc').all() %}
+
+            {# Create a category query with the 'group' parameter #}
+            {% set myCategoryQuery = craft.categories()
+                .group('Star Wars') %}
+
+            {# Fetch the categories #}
+            {% set categories = myCategoryQuery.all() %}
+
+
+        {#{% for articleItem in pageEntries %}#}
+        {#{% for articleItem in items %}#}
+            <a class="articles-overview__list-item-link" href="{{ articleItem.url }}">
+                <article class="article-list-item">
+                    <div class="article-list-item__hero-img-wrapper">
+                        {% if articleItem.image is defined and articleItem.image is not empty %}
+                            <img class="article-list-item__img" src="{{ articleItem.image.one().getUrl() }}" alt="">
+                        {% endif %}
+                    </div>
+                    <div class="article-list-item__text-wrapper">
+
+                        <span class="article-list-item__post-date">{{ entry.postDate | date("M d, Y") }}</span>
+                        <h1 class="article-list-item__title">{{ articleItem.title }}</h1>
+
+                        {% if articleItem.categories is defined and articleItem.categories is not empty %}
+                            {% set category = craft.categories.group('Categories').all() %}
+                            <h2 class="article-list-item__subtitle">{{ articleItem.categories.one().title }}</h2>
+                        {% endif %}
+
+                        <p class="article-list-item__description">{{ articleItem.text }}</p>
+                    </div>
+                    <button class="button">Read more</button>
+                </article>
+            </a>
+            <div class="clear-fix"></div>
+        {% endfor %}
+        <div class="button-wrap">
+            <button class="button show-more-btn">Show More</button>
+        </div>
+
+
+
+        {#{% set page = craft.request.getParam('page') ? craft.request.getParam('page')|number_format : 1 %}#}
+        {#{% set batch = 3 %}#}
+        {#{% set limit = page * batch %}#}
+        {#{% set newPage = page + 1 %}#}
+
+        {#{% set items = craft.entries.section('projects').limit(limit) %}#}
+
+        {#{% for item in items %}#}
+            {#<h2>{{ item.title }}</h2>#}
+            {# other markup for each item #}
+        {#{% endfor %}#}
+
+        {#<a href="?page={{ newPage }}">More</a>#}
+
+
+
+    </section>
+</div>

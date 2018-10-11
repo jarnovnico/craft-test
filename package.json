@@ -1,0 +1,24 @@
+{
+    "name": "craft-test",
+    "version": "1.0.0",
+    "description": "sp2 learning",
+    "private": true,
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack"
+    },
+    "author": "jarno-bravoure",
+    "license": "ISC",
+    "devDependencies": {
+        "barba.js": "^1.0.0",
+        "css-loader": "^1.0.0",
+        "file-loader": "^2.0.0",
+        "lodash": "^4.17.11",
+        "node-sass": "^34.9.",
+        "sass": "^1.14.1",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.0",
+        "webpack": "^4.20.2",
+        "webpack-cli": "^3.1.2"
+    }
+}

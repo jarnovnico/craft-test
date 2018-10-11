@@ -1,0 +1,15 @@
+
+{% block blocks %}
+    {% if entry['blocks'] is defined %}
+
+        {#{% set field = (field is defined) ? field : 'blocks' %}#}
+        {#{% for block in entry[field] %}#}
+        {% for block in entry['blocks'] %}
+
+            {# Every twig file for a block has to have the same name as it's handle #}
+            {% include ('blocks/_partials/_block_' ~ block.type.handle ~ '.twig') %}
+
+        {% endfor %}
+
+    {% endif %}
+{% endblock %}

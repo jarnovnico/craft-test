@@ -1,0 +1,31 @@
+/* --- Footer --- */
+
+.footer {
+  color: darkgray;
+
+  a {
+    color: darkgray;
+
+    &:visited {
+      color: darkgray;
+    }
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  ul {
+    padding: 0;
+    text-align: center;
+
+    li {
+      display: inline-block;
+      padding-right: 20px;
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
+  }
+}

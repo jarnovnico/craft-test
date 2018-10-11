@@ -1,0 +1,15 @@
+{
+    "name": "bravoure/imagemodule",
+    "description": "Glide library integration for Craft 3.x",
+    "type": "module",
+    "authors": [
+        {
+            "name": "Bravoure",
+            "email": "hallo@bravoure.nl"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "league/glide": "^1.3"
+    }
+}

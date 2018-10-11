@@ -1,0 +1,17 @@
+/* --- Body/Html --- */
+*, body, html {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body {
+  background: whitesmoke;
+}
+
+/* --- Links --- */
+a, a:visited {
+  transition: all 0.3s ease;
+  color: black;
+}
+a:hover {
+  text-decoration: none;
+}

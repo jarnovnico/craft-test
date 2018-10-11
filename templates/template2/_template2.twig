@@ -1,0 +1,21 @@
+
+{% extends '_base.twig' %}
+
+{% block content %}
+    <div class="template2 template-wrapper">
+        <section>
+            <div class="template-header-img__wrapper">
+                {% if entry.image is defined and entry.image is not empty %}
+                    <img class="template-header-img" src="{{ entry.image.one().getUrl() }}" alt="">
+                {% endif %}
+            </div>
+            <h1 class="template2__title">{{ entry.title }}</h1>
+            <p class="template2__text">{{ entry.text }}</p>
+        </section>
+        {% block blocks %}
+            {% include 'blocks/_blocks.twig' with {
+                field: 'blocks',
+            } %}
+        {% endblock %}
+    </div>
+{% endblock %}

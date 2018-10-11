@@ -1,0 +1,9 @@
+/* --- Grid --- */
+
+
+/* --- Clear fix for floats --- */
+.clear-fix:after {
+  content: '';
+  clear: both;
+  display: table;
+}
