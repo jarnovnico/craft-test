@@ -1,2 +1,2 @@
-# craft3-test
+# craft-test
 A test website with new Craft 3
