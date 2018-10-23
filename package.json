@@ -5,20 +5,22 @@
     "private": true,
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack"
+        "start": "webpack"
     },
     "author": "jarno-bravoure",
     "license": "ISC",
     "devDependencies": {
         "barba.js": "^1.0.0",
+        "browser-sync": "^2.26.3",
+        "browser-sync-webpack-plugin": "^2.2.2",
         "css-loader": "^1.0.0",
         "file-loader": "^2.0.0",
         "lodash": "^4.17.11",
-        "node-sass": "^34.9.",
+        "node-sass": "^4.9.3",
         "sass": "^1.14.1",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.0",
-        "webpack": "^4.20.2",
+        "webpack": "^4.22.0",
         "webpack-cli": "^3.1.2"
     }
 }

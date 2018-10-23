@@ -1,4 +1,5 @@
 const path = require('path');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
     entry: './templates/assets/js/main.js',
@@ -6,6 +7,7 @@ module.exports = {
         filename: 'main.min.js',
         path: path.resolve(__dirname, './templates/assets/dist')
     },
+    watch: true,
     module: {
         rules: [
             {
@@ -34,5 +36,18 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new BrowserSyncPlugin({
+            host: 'localhost',
+            port: 3000,
+            files: [
+                '../templates/**/**/*.scss',
+                '../templates/**/**/*.html',
+                '../templates/**/**/*.twig',
+                '../templates/**/**/*.js'
+            ],
+            proxy: 'http://local.craft-3-test.nl'
+        })
+    ]
 };
