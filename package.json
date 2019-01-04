@@ -10,7 +10,6 @@
     "author": "jarno-bravoure",
     "license": "ISC",
     "devDependencies": {
-        "barba.js": "^1.0.0",
         "browser-sync": "^2.26.3",
         "browser-sync-webpack-plugin": "^2.2.2",
         "css-loader": "^1.0.0",
