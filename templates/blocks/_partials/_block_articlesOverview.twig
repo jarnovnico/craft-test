@@ -37,9 +37,8 @@
             {# Fetch the categories #}
             {% set categories = myCategoryQuery.all() %}
 
-
-        {#{% for articleItem in pageEntries %}#}
-        {#{% for articleItem in items %}#}
+            {#{% for articleItem in pageEntries %}#}
+            {#{% for articleItem in items %}#}
             <a class="articles-overview__list-item-link" href="{{ articleItem.url }}">
                 <article class="article-list-item">
                     <div class="article-list-item__hero-img-wrapper">
@@ -68,8 +67,6 @@
             <button class="button show-more-btn">Show More</button>
         </div>
 
-
-
         {#{% set page = craft.request.getParam('page') ? craft.request.getParam('page')|number_format : 1 %}#}
         {#{% set batch = 3 %}#}
         {#{% set limit = page * batch %}#}
@@ -83,8 +80,6 @@
         {#{% endfor %}#}
 
         {#<a href="?page={{ newPage }}">More</a>#}
-
-
 
     </section>
 </div>

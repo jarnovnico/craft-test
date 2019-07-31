@@ -15,12 +15,6 @@ function component() {
     element.appendChild(myIcon);
 
     return element;
-
-    // Apply transition
-    Barba.Pjax.getTransition = () => FadeTransition;
-
-    // Start transition
-    Barba.Pjax.start();
 }
 
 document.body.appendChild(component());
